@@ -1,8 +1,12 @@
 
+
+
+myfunc(){
+
 x=120
 y=500
 
-sleep 4
+#sleep 4
 
 # Calculate and print the sum of x and y
 echo $((x + y))
@@ -10,4 +14,7 @@ echo $((x + y))
 
 echo 'something string' | tr ' ' '\n'
 
-sleep 5
+#sleep 5
+}
+
+myfunc
