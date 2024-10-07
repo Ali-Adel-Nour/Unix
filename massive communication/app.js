@@ -29,3 +29,6 @@ numberFormatter.on("close",(code)=>{
   fileStream.pipe(numberFormatter.stdin)
 
   console.log(`Current working directory: ${process.cwd()}`);
+
+
+  //numberFormmatter.stdin.write("159544 77 33")
