@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Ali/OneDrive/Desktop/Unix",
-      "program": "c:/Users/Ali/OneDrive/Desktop/Unix/build/Debug/outDebug",
+      "cwd": "c:/Users/Ali/OneDrive/Desktop/Unix/massive communication",
+      "program": "c:/Users/Ali/OneDrive/Desktop/Unix/massive communication/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
