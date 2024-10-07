@@ -23,9 +23,10 @@ const { stdin, stdout, stderr, env, argv, pid, ppid } = require("node:process");
 // console.log(env.PATH);
 // console.log(env.PWD);
 
+
 //** Spawning a process */
 const subprocess = spawn(
-  "./playground.js",
+  "./playground",
   ["some string", "-f", 34, "some more string", "-u"],
   {
     env: { MODE: "development" },

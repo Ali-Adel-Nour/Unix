@@ -1,0 +1,3 @@
+
+console.log("Subprocess started!");
+console.log(process.argv);
