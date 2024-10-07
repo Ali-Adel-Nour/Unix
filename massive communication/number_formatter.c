@@ -39,56 +39,55 @@ char* formatNumber(char* input, char begin, char divider) {
   return formattedNumber;
 }
 
+
 int main(int argc, char* argv[]) {
+  // Open a file for writing
+  FILE *outputFile = fopen(argv[1], "w");
 
-  FILE *outputFile = fopen(argv[1],"w");
-
-  //Allocate memory to save one complete number
-  char *number = (char * )malloc(10 * sizeof(char));
+  // Allocate memory to save one complete number into
+  char *number = (char *)malloc(10 * sizeof(char));
   int index = 0;
 
-  //Read one character from stdin
+  // Read one character from stdin
   int c = fgetc(stdin);
 
-  while(c != EOF){
+  // Keep reading until we get the End of File sign
+  while (c != EOF) {
 
-    if(c != ' '){
+    // Accumulate the digits until we completely read one number
+    if (c != ' ') {
       number[index] = c;
       index++;
     }
 
-    if(c == ' '){
-      if(index > 0){
-          //End the string(number) as we competely read the
-        number[index] = '%';
+    if (c == ' ') {
+      if (index > 0) {
+        // End the string (number) as we completely read the number
+        number[index] = '\0';
 
-        //Format the number just we read
+        // Format the number that we just read
+        char* formattedNumber = formatNumber(number, argv[2][0], argv[3][0]);
 
-       char *formattedNumber = formatNumber(number, argv[2][0], argv[3][0]);
+        // Write to our destination stream
+        fprintf(outputFile, " %s ", formattedNumber);
+        // fflush(outputFile);
 
-        //write to our destination stream
-
-         fprintf(outputFile, "%s", formattedNumber);
-         fflush(outputFile);
-
-        //Ressting
-
+        // Resetting...
         free(number);
         free(formattedNumber);
         number = (char *)malloc(10 * sizeof(char));
-        index= 0;
+        index = 0;
       }
     }
-    if(index == 10){
-      number[index] = '\0';
-      fprintf(outputFile, "%s", number);
-      index = 0;
-    }
-    //Read another character
-     c = fgetc(stdin);
+
+    // Read another character from stdin
+    c = fgetc(stdin);
   }
 
-fclose(outputFile);
-  exit(0);
 
+  // Close the opened file that we wrote to
+  fclose(outputFile);
+
+
+  exit(0);
 }
