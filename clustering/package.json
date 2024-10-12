@@ -5,12 +5,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "cluster":"cluster.js"
+    "cluster": "node cluster.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cpeak": "^1.4.0"
+    "clustering": "file:",
+    "cpeak": "^1.4.0",
+    "pm2": "^5.4.2"
   }
 }
